@@ -1,6 +1,8 @@
-# Makefile Project Template
+# Multithreaded FIFO Queue
 
-Steps to configure, build, run, and test the project.
+## Description
+
+This project implements a multithreaded FIFO queue to solve the bounded buffer problem. The queue has a fixed capacity and supports concurrent access by multiple producer and consumer threads. Producers add items to the queue, while consumers remove items. The queue uses condition variables and mutexes to ensure thread safety and proper synchronization, blocking threads when the queue is full or empty.
 
 ## Building
 
