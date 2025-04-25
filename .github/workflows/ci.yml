@@ -1,4 +1,4 @@
-name: Continuous Integration (CI) 
+name: Continuous Integration (CI)
 
 on:
   push:
@@ -12,8 +12,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - name: make
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y libreadline-dev
+
+    - name: Build
       run: make
-    - name: make check
+    
+    - name: Test
       run: make check
